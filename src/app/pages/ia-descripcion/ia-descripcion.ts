@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'; 
 import { IaService } from '../../services/ia.service';
 
 @Component({
   selector: 'app-ia-descripcion',
-  templateUrl: './ia-descripcion.html'
+  standalone: true,
+  imports: [FormsModule, CommonModule], 
+  templateUrl: './ia-descripcion.html',
+  styleUrls: ['./ia-descripcion.css']
 })
 export class IaDescripcionComponent {
   animal = '';

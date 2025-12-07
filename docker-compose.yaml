@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  api:
+    image: orlando333/animalinfoapi:latest
+    container_name: animalinfo_api
+    ports:
+      - "5075:8080"        
+    environment:
+      DB_CONNECTION: "Data Source=animalinfo.db"   
+      OpenAIKey: "${OPENAI_API_KEY}"                  
+    restart: unless-stopped
+
+  angular:
+    image: orlando333/animalinfoapp:latest
+    container_name: animalinfo_angular
+    ports:
+      - "4200:80"         
+    environment:
+      API_URL: "http://localhost:5075/api"  
+    depends_on:
+      - api
+    restart: unless-stopped

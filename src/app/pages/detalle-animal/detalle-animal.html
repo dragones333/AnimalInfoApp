@@ -1,7 +1,14 @@
-<div *ngIf="cargando">Cargando...</div>
-<div *ngIf="animal">
-  <img [src]="animal.imagenUrl" class="foto">
-  <h1>{{ animal.nombre }}</h1>
-  <h3>{{ animal.especie }}</h3>
-  <p>{{ animal.descripcion }}</p>
+<div class="container" *ngIf="animal; else loadingTemplate">
+  <div class="detalle-card">
+    <img [src]="animal.imagenUrl" alt="{{ animal.nombre }}" />
+    <div class="info">
+      <h1>{{ animal.nombre }}</h1>
+      <h3>{{ animal.especie }}</h3> 
+      <p>{{ animal.descripcion }}</p>
+    </div>
+  </div>
 </div>
+
+<ng-template #loadingTemplate>
+  <div class="loading">Cargando detalles del animal...</div>
+</ng-template>
