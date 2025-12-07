@@ -8,7 +8,7 @@ import { NgIf } from '@angular/common';
   standalone: true,
   imports: [NgIf],
   templateUrl: './detalle-animal.html',
-  styleUrl: './detalle-animal.css',
+  styleUrls: ['./detalle-animal.css'],
 })
 export class DetalleAnimal implements OnInit {
   animal?: Animal;
@@ -18,12 +18,8 @@ export class DetalleAnimal implements OnInit {
 
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-
     this.api.getAnimal(id).subscribe({
-      next: data => {
-        this.animal = data;
-        this.cargando = false;
-      }
+      next: data => { this.animal = data; this.cargando = false; }
     });
   }
 }

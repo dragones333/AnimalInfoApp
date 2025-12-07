@@ -8,7 +8,7 @@ import { NgFor, NgIf } from '@angular/common';
   standalone: true,
   imports: [NgFor, NgIf],
   templateUrl: './animales.html',
-  styleUrl: './animales.css',
+  styleUrls: ['./animales.css'],
 })
 export class Animales implements OnInit {
   animales: Animal[] = [];
@@ -19,14 +19,8 @@ export class Animales implements OnInit {
 
   ngOnInit() {
     this.api.getAnimales().subscribe({
-      next: (data) => {
-        this.animales = data;
-        this.cargando = false;
-      },
-      error: () => {
-        this.error = 'Error cargando animales';
-        this.cargando = false;
-      }
+      next: data => { this.animales = data; this.cargando = false; },
+      error: () => { this.error = 'Error cargando animales'; this.cargando = false; }
     });
   }
 

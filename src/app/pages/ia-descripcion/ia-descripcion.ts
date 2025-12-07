@@ -19,7 +19,7 @@ export class IaDescripcionComponent {
     this.error = '';
     this.ia.generarDescripcion(this.animal).subscribe({
       next: res => { this.respuesta = res.descripcion; this.cargando = false; },
-      error: err => { this.error = 'Error al generar'; this.cargando = false; }
+      error: () => { this.error = 'Error al generar'; this.cargando = false; }
     });
   }
 }
