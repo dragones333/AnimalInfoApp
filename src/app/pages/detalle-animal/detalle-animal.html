@@ -1,0 +1,7 @@
+<div *ngIf="cargando">Cargando...</div>
+<div *ngIf="animal">
+  <img [src]="animal.imagenUrl" class="foto">
+  <h1>{{ animal.nombre }}</h1>
+  <h3>{{ animal.especie }}</h3>
+  <p>{{ animal.descripcion }}</p>
+</div>

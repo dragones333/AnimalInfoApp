@@ -1,0 +1,12 @@
+<h1>Lista de Animales</h1>
+
+<div *ngIf="cargando">Cargando...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<div class="lista">
+  <div class="card" *ngFor="let a of animales" (click)="verDetalle(a.id)">
+    <img [src]="a.imagenUrl" alt="{{ a.nombre }}">
+    <h3>{{ a.nombre }}</h3>
+    <p>{{ a.especie }}</p>
+  </div>
+</div>
