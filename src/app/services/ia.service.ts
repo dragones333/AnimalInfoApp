@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class IaService {
-  private base = (window as any).__env?.API_URL || 'http://localhost:5000';
+  private base = (window as any).__env?.API_URL || 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
 

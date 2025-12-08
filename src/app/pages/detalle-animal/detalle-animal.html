@@ -1,14 +1,10 @@
-<div class="container" *ngIf="animal; else loadingTemplate">
+<div class="container" *ngIf="animal">
   <div class="detalle-card">
-    <img [src]="animal.imagenUrl" alt="{{ animal.nombre }}" />
+    <img [src]="animal.imagenUrl" />
     <div class="info">
       <h1>{{ animal.nombre }}</h1>
-      <h3>{{ animal.especie }}</h3> 
+      <h3>{{ animal.especie }}</h3>
       <p>{{ animal.descripcion }}</p>
     </div>
   </div>
 </div>
-
-<ng-template #loadingTemplate>
-  <div class="loading">Cargando detalles del animal...</div>
-</ng-template>

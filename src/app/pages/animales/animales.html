@@ -1,12 +1,11 @@
 <div class="container">
   <h1>Animales</h1>
 
-  <div *ngIf="cargando" class="loading">Cargando animales...</div>
-  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="cargando">Cargando...</div>
 
-  <div class="animal-list" *ngIf="!cargando && !error">
+  <div class="animal-list" *ngIf="!cargando">
     <div class="animal-card" *ngFor="let a of animales" (click)="verDetalle(a.id)">
-      <img [src]="a.imagenUrl" alt="{{ a.nombre }}" />
+      <img [src]="a.imagenUrl" />
       <div class="info">
         <h2>{{ a.nombre }}</h2>
         <p>{{ a.especie }}</p>

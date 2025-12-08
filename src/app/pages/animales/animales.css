@@ -1,65 +1,30 @@
 .container {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 15px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.loading, .error {
-  text-align: center;
-  font-size: 18px;
-  margin: 20px 0;
-  color: #555;
-}
-
-.error {
-  color: red;
+  width: 100%;
 }
 
 .animal-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
 }
 
 .animal-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
   cursor: pointer;
-  width: 200px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform .2s, box-shadow .2s;
 }
 
 .animal-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 20%);
 }
 
 .animal-card img {
   width: 100%;
   height: 150px;
   object-fit: cover;
-}
-
-.animal-card .info {
-  padding: 10px;
-  text-align: center;
-}
-
-.animal-card h2 {
-  font-size: 18px;
-  margin: 0;
-}
-
-.animal-card p {
-  margin: 5px 0 0;
-  color: #777;
-  font-size: 14px;
+  border-radius: 10px;
 }

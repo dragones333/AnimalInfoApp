@@ -1,20 +1,9 @@
 <div class="ia-container">
-  <h1>Generar descripción de un animal</h1>
+  <h1>Generar descripción</h1>
 
-  <input
-    type="text"
-    placeholder="Nombre del animal"
-    [(ngModel)]="animal"
-  />
+  <input [(ngModel)]="animal" placeholder="Nombre" />
 
-  <button (click)="generar()" [disabled]="cargando || !animal">
-    {{ cargando ? 'Generando...' : 'Generar descripción' }}
-  </button>
+  <button (click)="generar()">Generar</button>
 
-  <div *ngIf="error" class="error">{{ error }}</div>
-
-  <div *ngIf="respuesta" class="respuesta">
-    <h3>Descripción generada:</h3>
-    <p>{{ respuesta }}</p>
-  </div>
+  <p *ngIf="respuesta">{{ respuesta }}</p>
 </div>

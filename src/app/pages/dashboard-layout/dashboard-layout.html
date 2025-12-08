@@ -1,0 +1,25 @@
+<div class="layout">
+  <aside class="sidebar">
+    <h2 class="logo">🐾 AnimalInfo</h2>
+
+    <nav>
+      <a routerLink="/animales" routerLinkActive="active">
+        📋 Animales
+      </a>
+
+      <a routerLink="/ia" routerLinkActive="active">
+        🤖 IA Descripción
+      </a>
+    </nav>
+  </aside>
+
+  <section class="content">
+    <header class="topbar">
+      <h1>Panel de Control</h1>
+    </header>
+
+    <main class="main-container">
+      <router-outlet></router-outlet>
+    </main>
+  </section>
+</div>
